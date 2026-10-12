@@ -10,7 +10,8 @@ class AccueilApp extends StatefulWidget {
 class _AccueilAppState extends State<AccueilApp> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
       children: [
         Container(
           padding: const EdgeInsets.all(16.0),
@@ -41,27 +42,8 @@ class _AccueilAppState extends State<AccueilApp> {
           ),
         ),
 
-        NavigationBar(
-          selectedIndex: 0,
-          onDestinationSelected: (int index) {
-            // Handle navigation bar item selection
-          },
-          destinations: const <NavigationDestination>[
-            NavigationDestination(
-              icon: Icon(Icons.home),
-              label: 'Accueil',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.calendar_today),
-              label: 'Rendez-vous',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.settings),
-              label: 'Paramètres',
-            ),
-          ],
-        ),
       ],
+      ),
     );
   }
 }

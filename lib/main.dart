@@ -9,15 +9,35 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+      Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-       
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.orange,
+          brightness: Brightness.light,
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.orange,
+          foregroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: true,
+        ),
+        navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: Colors.orange.shade50,
+          indicatorColor: Colors.orange,
+          iconTheme: MaterialStatePropertyAll<IconThemeData?>(
+            const IconThemeData(color: Colors.black),
+          ),
+          labelTextStyle: MaterialStatePropertyAll<TextStyle?>(
+            const TextStyle(color: Colors.black),
+          ),
+        ),
       ),
-      home:  PageLogP(),
+      home: PageLogP(),
     );
   }
 }
+
